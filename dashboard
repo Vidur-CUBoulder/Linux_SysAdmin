@@ -1,0 +1,50 @@
+#!/bin/bash
+
+echo -e "------CPU and Memory Resources------"
+
+#cpu_load=`uptime | awk '{print $8, $9, $10}'`
+cpu_load=`uptime | tail -c 17`
+echo -e "CPU Average Load: $cpu_load"
+
+free_RAM=`free -h | awk '{print $3}' | awk 'FNR==2'`
+echo -e "Free RAM: $free_RAM"
+
+echo -e "\n"
+echo -e "------Network Connections------"
+
+intf_1=`cat /proc/net/dev | awk '{print $1}' | awk 'FNR==3'`
+intf_1_recv_bytes=`cat /proc/net/dev | awk '{print $2}' | awk 'FNR==3'`
+intf_1_trans_bytes=`cat /proc/net/dev | awk '{print $10}' | awk 'FNR==3'`
+#echo $intf_1
+#echo $intf_1_recv_bytes
+#echo $intf_1_trans_bytes
+
+intf_2=`cat /proc/net/dev | awk '{print $1}' | awk 'FNR==4'`
+intf_2_recv_bytes=`cat /proc/net/dev | awk '{print $2}' | awk 'FNR==4'`
+intf_2_trans_bytes=`cat /proc/net/dev | awk '{print $10}' | awk 'FNR==4'`
+#echo $intf_2
+#echo $intf_2_recv_bytes
+#echo $intf_2_trans_bytes
+
+echo -e "$intf_1"
+echo -e "\tBytes Received:   $intf_1_recv_bytes"
+echo -e "\tBytes Trasmitted: $intf_1_trans_bytes"
+
+echo -e "$intf_2"
+echo -e "\tBytes Received:   $intf_2_recv_bytes"
+echo -e "\tBytes Trasmitted: $intf_2_trans_bytes"
+
+echo -e "\n"
+if `ping -q -c 1 -W 1 www.google.com > /dev/null`;
+then
+  echo "Internet Connectivity: Yes"
+else
+  echo "Internet Connectivity: No"
+fi
+
+echo -e "\n"
+
+echo -e "------Account Information------"
+
+
+
