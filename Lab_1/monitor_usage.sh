@@ -9,18 +9,13 @@ monitor_root=`df -ah / | awk '{print $5}' | cut -d \% -f 1 | awk 'FNR==2'`
 monitor_boot=`df -ah /boot/ | awk '{print $5}' | cut -d \% -f 1 | awk 'FNR==2'`
 
 #Hold the command line input from the user
-THRESHOLD=$1
-EMAIL="vidur.sarin@colorado.edu"
+THRESHOLD=10
+EMAIL="root@localhost"
 
 #Check if the value entered for percentage is > 100
 if [ $THRESHOLD -gt 100 ]
 then
 	echo "Please enter a value lesser than 100"
-	exit 1
-#Check if there is no input from the command line
-elif [ $# -eq 0 ]
-then
-	echo "No arguments supplied"
 	exit 1
 fi
 
@@ -34,5 +29,5 @@ fi
 if [ $monitor_root -gt $THRESHOLD ]
 then
 	#Send the mail
-	mail -s "FILESYSTEM THRESHOLD CROSSED!!" $EMAIL <<< "The Use% for / ($monitor_boot) has been exceeded!" 
+	mail -s "FILESYSTEM THRESHOLD CROSSED!!" $EMAIL <<< "The Use% for / ($monitor_root) has been exceeded!" 
 fi
