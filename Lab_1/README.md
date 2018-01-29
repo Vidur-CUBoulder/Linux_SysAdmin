@@ -6,7 +6,7 @@ This script will help monitor and administer the filesystems on `/` & `/boot` an
 
 You can run the script by using the following command:
 ```
-monitor_usage.sh <threshold value>
+./monitor_usage.sh
 ```
 
 ### Dashboard Script
