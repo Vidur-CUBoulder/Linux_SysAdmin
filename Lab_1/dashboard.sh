@@ -17,13 +17,15 @@ echo -e "Free RAM: ${GREEN}$free_RAM${NC}"
 echo -e "\n"
 echo -e "------${BLUE}Network Connections${NC}------"
 
-intf_1=`cat /proc/net/dev | awk '{print $1}' | awk 'FNR==3'`
-intf_1_recv_bytes=`cat /proc/net/dev | awk '{print $2}' | awk 'FNR==3'`
-intf_1_trans_bytes=`cat /proc/net/dev | awk '{print $10}' | awk 'FNR==3'`
+intf_1=`cat /proc/net/dev | awk 'FNR==3' | awk '{print $1}'`
+intf_1_recv_bytes=`cat /proc/net/dev | awk 'FNR==3' | awk '{print $2}'`
+intf_1_trans_bytes=`cat /proc/net/dev | awk 'FNR==3' | awk '{print $10}'`
 
-intf_2=`cat /proc/net/dev | awk '{print $1}' | awk 'FNR==4'`
-intf_2_recv_bytes=`cat /proc/net/dev | awk '{print $2}' | awk 'FNR==4'`
-intf_2_trans_bytes=`cat /proc/net/dev | awk '{print $10}' | awk 'FNR==4'`
+intf_2=`cat /proc/net/dev | awk 'FNR==4' | awk '{print $1}'`
+intf_2_recv_bytes=`cat /proc/net/dev | awk 'FNR==4' | awk '{print $2}'`
+intf_2_trans_bytes=`cat /proc/net/dev | awk 'FNR==4' | awk '{print $10}'`
+
+num_interfaces=`cat /proc/net/dev | wc -l`
 
 echo -e "$intf_1"
 echo -e "\tBytes Received:   ${GREEN}$intf_1_recv_bytes${NC}"
@@ -60,5 +62,4 @@ echo -e "\n"
 echo -e "------${BLUE}Filesystem Information${NC}------"
 echo -e "Total Number of Files:       ${GREEN}`find / -type f | wc -l`${NC}"
 echo -e "Total Number of Directories: ${GREEN}`find / -type d | wc -l`${NC}"
-
 
