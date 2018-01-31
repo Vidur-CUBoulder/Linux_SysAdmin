@@ -17,23 +17,18 @@ echo -e "Free RAM: ${GREEN}$free_RAM${NC}"
 echo -e "\n"
 echo -e "------${BLUE}Network Connections${NC}------"
 
-intf_1=`cat /proc/net/dev | awk 'FNR==3' | awk '{print $1}'`
-intf_1_recv_bytes=`cat /proc/net/dev | awk 'FNR==3' | awk '{print $2}'`
-intf_1_trans_bytes=`cat /proc/net/dev | awk 'FNR==3' | awk '{print $10}'`
-
-intf_2=`cat /proc/net/dev | awk 'FNR==4' | awk '{print $1}'`
-intf_2_recv_bytes=`cat /proc/net/dev | awk 'FNR==4' | awk '{print $2}'`
-intf_2_trans_bytes=`cat /proc/net/dev | awk 'FNR==4' | awk '{print $10}'`
-
 num_interfaces=`cat /proc/net/dev | wc -l`
 
-echo -e "$intf_1"
-echo -e "\tBytes Received:   ${GREEN}$intf_1_recv_bytes${NC}"
-echo -e "\tBytes Trasmitted: ${GREEN}$intf_1_trans_bytes${NC}"
-
-echo -e "$intf_2"
-echo -e "\tBytes Received:   ${GREEN}$intf_2_recv_bytes${NC}"
-echo -e "\tBytes Trasmitted: ${GREEN}$intf_2_trans_bytes${NC}"
+for ((i=3; i<=num_interfaces; i++))
+do
+	intf=`cat /proc/net/dev | awk "FNR==$i" | awk '{print $1}'`
+	intf_recv_bytes=`cat /proc/net/dev | awk "FNR==$i" | awk '{print $2}'`
+	intf_trans_bytes=`cat /proc/net/dev | awk "FNR==$i" | awk '{print $10}'`
+	
+	echo -e "$intf"
+	echo -e "\tBytes Received:   ${GREEN}$intf_recv_bytes${NC}"
+	echo -e "\tBytes Trasmitted: ${GREEN}$intf_trans_bytes${NC}"
+done
 
 echo -e "\n"
 
