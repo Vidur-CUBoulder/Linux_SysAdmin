@@ -12,6 +12,7 @@
 # 1. Bash script to monitor the / and /boot directories
 # 2. Send a mail to the admin if Use% is greater than the threshold supplied 
 #    by the user from the command line.
+##############################################################################
 
 #Store the parsed percentage values in the below variables
 monitor_root=`df -ah / | awk '{print $5}' | cut -d \% -f 1 | awk 'FNR==2'`

@@ -17,6 +17,7 @@ echo -e "Free RAM: ${GREEN}$free_RAM${NC}"
 echo -e "\n"
 echo -e "------${BLUE}Network Connections${NC}------"
 
+#Cycle through all the interfaces in the file
 num_interfaces=`cat /proc/net/dev | wc -l`
 
 for ((i=3; i<=num_interfaces; i++))
