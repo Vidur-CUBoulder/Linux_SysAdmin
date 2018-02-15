@@ -1,12 +1,12 @@
 group { 'manager':
-	ensure => 'absent',
+	ensure => 'present',
 	gid => '510',
 }
 group { 'sales':
-	ensure => 'absent',
+	ensure => 'present',
 	gid => '511',
 }
 group { 'accounting':
-	ensure => 'absent',
+	ensure => 'present',
 	gid => '512',
 }

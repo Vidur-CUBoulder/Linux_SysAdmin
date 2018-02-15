@@ -1,20 +1,17 @@
 file { '/home/manager':
-	ensure => 'absent',
+	ensure => 'directory',
 	group => 'manager',
-	force => true,
-	recurse => true,
+	mode => 2770,
 }
 
 file { '/home/sales':
-	ensure => 'absent',
+	ensure => 'directory',
 	group => 'sales',
-	force => true,
-	recurse => true,
+	mode => 2770,
 }
 
 file { '/home/accounting':
-	ensure => 'absent',
+	ensure => 'directory',
 	group => 'accounting',
-	force => true,
-	recurse => true,
+	mode => 2770,
 }
