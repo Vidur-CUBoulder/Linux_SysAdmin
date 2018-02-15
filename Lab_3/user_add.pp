@@ -1,6 +1,6 @@
 # Creating users for everyone under manager
 user { 'mscott':
-	ensure => 'absent',
+	ensure => 'present',
 	groups => 'manager',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
@@ -10,7 +10,7 @@ user { 'mscott':
 }
 
 user { 'jhalpert':
-	ensure => 'absent',
+	ensure => 'present',
 	groups => 'manager',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
@@ -20,7 +20,7 @@ user { 'jhalpert':
 }
 
 user { 'dschrute':
-	ensure => 'absent',
+	ensure => 'present',
 	groups => 'manager',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
@@ -31,7 +31,7 @@ user { 'dschrute':
 
 # creating users for everyone is accounting
 user { 'kmalone':
-	ensure => 'absent',
+	ensure => 'present',
 	groups => 'accounting',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
@@ -41,7 +41,7 @@ user { 'kmalone':
 }
 
 user { 'omartinez':
-	ensure => 'absent',
+	ensure => 'present',
 	groups => 'accounting',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
@@ -51,7 +51,7 @@ user { 'omartinez':
 }
 
 user { 'amartin':
-	ensure => 'absent',
+	ensure => 'present',
 	groups => 'accounting',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
@@ -62,7 +62,7 @@ user { 'amartin':
 
 #creating users for everyone under sales
 user { 'abernard':
-	ensure => 'absent',
+	ensure => 'present',
 	groups => 'sales',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
@@ -72,7 +72,7 @@ user { 'abernard':
 }
 
 user { 'plapin':
-	ensure => 'absent',
+	ensure => 'present',
 	groups => 'sales',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
@@ -82,7 +82,7 @@ user { 'plapin':
 }
 
 user { 'shudson':
-	ensure => 'absent',
+	ensure => 'present',
 	groups => 'sales',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
@@ -93,7 +93,7 @@ user { 'shudson':
 
 #Creating users for everyone else in D-M
 user { 'tflenderson':
-	ensure => 'absent',
+	ensure => 'present',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
 	uid => '565',
@@ -102,7 +102,7 @@ user { 'tflenderson':
 }
 
 user { 'dphilbin':
-	ensure => 'absent',
+	ensure => 'present',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
 	uid => '566',
@@ -111,7 +111,7 @@ user { 'dphilbin':
 }
 
 user { 'cbratton':
-	ensure => 'absent',
+	ensure => 'present',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
 	uid => '567',
@@ -120,7 +120,7 @@ user { 'cbratton':
 }
 
 user { 'kkapoor':
-	ensure => 'absent',
+	ensure => 'present',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
 	uid => '568',
@@ -129,7 +129,7 @@ user { 'kkapoor':
 }
 
 user { 'mpalmer':
-	ensure => 'absent',
+	ensure => 'present',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
 	uid => '569',
@@ -138,7 +138,7 @@ user { 'mpalmer':
 }
 
 user { 'pbeesly':
-	ensure => 'absent',
+	ensure => 'present',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
 	uid => '570',
@@ -148,7 +148,7 @@ user { 'pbeesly':
 
 # This is me!!
 user { 'vsarin':
-	ensure => 'absent',
+	ensure => 'present',
 	password => '$1$qRkDPKak$CrUAxzOhH3a1HTpC59VwW/',
 	shell => '/bin/bash',
 	uid => '571',
